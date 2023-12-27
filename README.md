@@ -8,18 +8,21 @@ Naudojant class:
 
 <img width="745" alt="klase_vector" src="https://github.com/edabarsteigaite/antras/assets/145291058/26381fa4-f82e-4080-bfd9-59c6a8e39dc3">
 
-Taigi, naudojant clas veikimo laikas yra ilgesnis.
+Taigi, naudojant class veikimo laikas yra ilgesnis.
 
 Eksperimentinė analizė priklausomai nuo kompiliatoriaus optimizavimo lygio:
 O1:
+
 <img width="745" alt="klase_o1" src="https://github.com/edabarsteigaite/antras/assets/145291058/67593b91-4481-4391-bef0-39f3d6915440">
 
 O2:
+
 <img width="724" alt="klase_o2" src="https://github.com/edabarsteigaite/antras/assets/145291058/03af9e51-536a-4aef-8246-0f8a91316a36">
 
 O3:
+
 <img width="728" alt="klase_o3" src="https://github.com/edabarsteigaite/antras/assets/145291058/7738954d-9c6f-40c8-93da-d82da7df844a">
 
-Visų exe failų dydis buvo vienodas 1,251 KB
+Dirbant su skirtingais flag programos veikimo laikas labai panašus, bet O1 buvo pats sparčiausias. Visų exe failų dydis buvo vienodas 1,251 KB 
 Testavimas vykdytas su šiais parametrais: Procesorius: AMD Ryzen 7 5800H with Radeon Graphics 3.20 GHz, Atmintis: 16.0 GB (13.9 GB naudojama), SSD
 
