@@ -1,7 +1,6 @@
 #include <iostream>
 #include <iomanip>
 #include "studentas.h"
-#include "studentas_list.h"
 
 using namespace std;
 
@@ -20,7 +19,7 @@ int main()
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
 
-    cout << "Pasirinkite ar norite naudoti vector konteinerį (spauskite v) ar list konteinerį (spauskite l) ?" << endl;
+    cout << "Pasirinkite ar norite naudoti vector konteineri (spauskite v) ar list konteineri (spauskite l) ?" << endl;
     while (!(cin >> pasirinkimas_konteineris) || (pasirinkimas_konteineris != 'v' && pasirinkimas_konteineris != 'V' && pasirinkimas_konteineris != 'l' && pasirinkimas_konteineris != 'L'))
     {
         cout << "Pasirinkite v arba l ";
@@ -66,9 +65,9 @@ int main()
     {
         if (pasirinkimas_konteineris == 'v' || pasirinkimas_konteineris == 'V')
         {
-            testavimas_vector("studentai_1000.txt", 1000, "kietiakai_1000.txt", "vargsiukai_1000.txt");
-            testavimas_vector("studentai_10000.txt", 10000, "kietiakai_10000.txt", "vargsiukai_10000.txt");
-            testavimas_vector("studentai_100000.txt", 100000, "kietiakai_100000.txt", "vargsiukai_100000.txt");
+            //testavimas_vector("studentai_1000.txt", 1000, "kietiakai_1000.txt", "vargsiukai_1000.txt");
+            //testavimas_vector("studentai_10000.txt", 10000, "kietiakai_10000.txt", "vargsiukai_10000.txt");
+            //testavimas_vector("studentai_100000.txt", 100000, "kietiakai_100000.txt", "vargsiukai_100000.txt");
             testavimas_vector("studentai_1000000.txt", 1000000, "kietiakai_1000000.txt", "vargsiukai_1000000.txt");
             testavimas_vector("studentai_10000000.txt", 10000000, "kietiakai_10000000.txt", "vargsiukai_10000000.txt");
         }
@@ -81,6 +80,10 @@ int main()
             testavimas_list("studentai_10000000.txt", 10000000, "kietiakai_10000000.txt", "vargsiukai_10000000.txt");
         }
     }
+
+    return 0;
+}
+
 
     return 0;
 }
