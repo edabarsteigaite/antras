@@ -6,25 +6,155 @@
 #include <string>
 #include <vector>
 #include <list>
+#include <algorithm>
+
 
 using std::string;
 using std::vector;
 using std::list;
 
-struct StudentasV {
+class StudentasV {
+private:
     std::string vardas;
     std::string pavarde;
     std::vector<int> namu_darbai;
     int egzamino_rezultatas;
     float galutinisBalas;
+public:
+    // konstruktorius
+    StudentasV() : egzamino_rezultatas(0), galutinisBalas(0.0) {}
+
+    //getteriai ir setteriai
+    const std::string& getVardas() const {
+        return vardas;
+    }
+
+    void setVardas(const std::string& vardas) {
+        this->vardas = vardas;
+    }
+
+    const std::string& getPavarde() const {
+        return pavarde;
+    }
+
+    void setPavarde(const std::string& pavarde) {
+        this->pavarde = pavarde;
+    }
+
+    std::vector<int>& getNamuDarbai() {
+        return namu_darbai;
+    }
+
+    void setNamuDarbai(const std::vector<int>& namu_darbai) {
+        this->namu_darbai = namu_darbai;
+    }
+
+    int getEgzaminoRezultatas() const {
+        return egzamino_rezultatas;
+    }
+
+    void setEgzaminoRezultatas(int egzamino_rezultatas) {
+        this->egzamino_rezultatas = egzamino_rezultatas;
+    }
+
+    float getGalutinisBalas() const {
+        return galutinisBalas;
+    }
+
+    void setGalutinisBalas(float galutinisBalas) {
+        this->galutinisBalas = galutinisBalas;
+    }
+    // destruktorius
+    ~StudentasV() {
+    }
 };
 
-struct StudentasL {
+class StudentasL {
+private:
     std::string vardas;
     std::string pavarde;
     std::list<int> namu_darbai;
     int egzamino_rezultatas;
     float galutinisBalas;
+public:
+    // konstruktorius
+    StudentasL() : egzamino_rezultatas(0), galutinisBalas(0.0) {}
+
+    // getteriai ir setteriai
+    const std::string& getVardas() const {
+        return vardas;
+    }
+
+    void setVardas(const std::string& vardas) {
+        this->vardas = vardas;
+    }
+
+    const std::string& getPavarde() const {
+        return pavarde;
+    }
+
+    void setPavarde(const std::string& pavarde) {
+        this->pavarde = pavarde;
+    }
+
+    std::list<int>& getNamuDarbai() {
+        return namu_darbai;
+    }
+
+    void setNamuDarbai(const std::list<int>& namu_darbai) {
+        this->namu_darbai = namu_darbai;
+    }
+
+    int getEgzaminoRezultatas() const {
+        return egzamino_rezultatas;
+    }
+
+    void setEgzaminoRezultatas(int egzamino_rezultatas) {
+        this->egzamino_rezultatas = egzamino_rezultatas;
+    }
+
+    float getGalutinisBalas() const {
+        return galutinisBalas;
+    }
+
+    void setGalutinisBalas(float galutinisBalas) {
+        this->galutinisBalas = galutinisBalas;
+    }
+    // destruktorius
+    ~StudentasL() {
+    }
 };
 
-#endif
+void rusiavimas_vector(vector<StudentasV>& studentaiV);
+void generavimas_vector(vector<StudentasV>& studentaiV, int count, const string& failas);
+void saugojimas_vector(const string& failas, const vector<StudentasV>& studentaiV);
+void skaitymas_vector(vector<StudentasV>& studentaiV, const string& pav);
+
+void rusiavimas_pagal_balus_vector(vector<StudentasV>& studentaiV, vector<StudentasV>& vargsiukai);
+void isvedimas_vargsiukai_vector(const string& failas_vargsiukai, const vector<StudentasV>& vargsiukai);
+void isvedimas_kietiakai_vector(const string& failas_kietiakai, const vector<StudentasV>& studentaiV);
+
+void generavimo_laikas_vector(vector<StudentasV>& studentaiV, int skaicius, const string& failas);
+void skaitymo_laikas_vector(vector<StudentasV>& studentaiV, int skaicius, const string& failas);
+void rusiavimo_laikas_vector(vector<StudentasV>& studentaiV, int skaicius, vector<StudentasV>& vargsiukai);
+void isvedimo_vargsiukai_laikas_vector(const string& failas_vargsiukai, int skaicius, const vector<StudentasV>& vargsiukai);
+void isvedimo_kietiakai_laikas_vector(const string& failas_kietiakai, int skaicius, const vector<StudentasV>& studentaiV);
+void testavimas_vector(const string& failoPav, int skaicius, const string& kietiakaiF, const string& vargsiukaiF);
+
+void rusiavimas_list(list<StudentasL>& studentaiL);
+void generavimas_list(list<StudentasL>& studentaiL, int count, const string& failas);
+void saugojimas_list(const string& failas, const list<StudentasL>& studentaiL);
+void skaitymas_list(list<StudentasL>& studentaiL, const string& pav);
+
+void rusiavimas_pagal_balus_list(list<StudentasL>& studentaiL, list<StudentasL>& vargsiukai);
+void isvedimas_vargsiukai_list(const string& failas_vargsiukai, const list<StudentasL>& vargsiukai);
+void isvedimas_kietiakai_list(const string& failas_kietiakai, const list<StudentasL>& studentaiL);
+
+void generavimo_laikas_list(list<StudentasL>& studentaiL, int skaicius, const string& failas);
+void skaitymo_laikas_list(list<StudentasL>& studentaiL, int skaicius, const string& failas);
+void rusiavimo_laikas_list(list<StudentasL>& studentaiL, int skaicius, list<StudentasL>& vargsiukai);
+void isvedimo_vargsiukai_laikas_list(const string& failas_vargsiukai, int skaicius, const list<StudentasL>& vargsiukai);
+void isvedimo_kietiakai_laikas_list(const string& failas_kietiakai, int skaicius, const list<StudentasL>& studentaiL);
+void testavimas_list(const string& failoPav, int skaicius, const string& kietiakaiF, const string& vargsiukaiF);
+
+#endif // STUDENTAS_H_INCLUDED
