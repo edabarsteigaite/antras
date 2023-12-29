@@ -84,9 +84,9 @@ public:
         galutinisBalas = other.galutinisBalas;
     }
 
-    // kopijavimo priskyrimo konstruktorius
+    // kopijavimo priskyrimo operatorius
     StudentasV& operator=(const StudentasV& other) {
-        std::cout << "iskviestas kopijavimo priskyrimo konstruktorius " << other.vardas << " " << other.pavarde << std::endl;
+        std::cout << "iskviestas kopijavimo priskyrimo operatorius " << other.vardas << " " << other.pavarde << std::endl;
         if (this != &other) {
             namu_darbai.clear(); 
             vardas = other.vardas;
@@ -187,9 +187,9 @@ public:
         galutinisBalas = other.galutinisBalas;
     }
 
-    // kopijavimo priskyrimo konstruktorius
+    // kopijavimo priskyrimo operatorius
     StudentasL& operator=(const StudentasL& other) {
-        std::cout << "iskviestas kopijavimo priskyrimo konstruktorius " << other.vardas << " " << other.pavarde << std::endl;
+        std::cout << "iskviestas kopijavimo priskyrimo operatorius " << other.vardas << " " << other.pavarde << std::endl;
         if (this != &other) {
             namu_darbai.clear();
             vardas = other.vardas;
