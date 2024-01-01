@@ -13,13 +13,23 @@ int main()
     char pasirinkimas_konteineris;
     char pasirinkimas_veiksmas;
 
+    //Zmogus zmogusObject;
+
+    StudentasV studentas1;
+    cin >> studentas1;
+    StudentasV
+        studentas2(studentas1);
+    StudentasV
+        studentas3 = studentas1;   // rule of three veikimas
+    cout << studentas1 <<
+        endl;
+    cout << studentas2 <<
+        endl;
+    cout << studentas3 <<
+        endl;
+
     srand(time(0));
 
-    StudentasV studente;
-    std::cin >> studente;  // perdengtu operatoriu bandymas
-    std::cout << studente;
-
-   
 
     cout << "Pasirinkite, ka norite daryti (r - ranka, a - atsitiktinai, f - nuskaityti is failo, t - testavimas): ";
     while (!(cin >> pasirinkimas_veiksmas) || (pasirinkimas_veiksmas != 'r' && pasirinkimas_veiksmas != 'R' && pasirinkimas_veiksmas != 'a' && pasirinkimas_veiksmas != 'A' && pasirinkimas_veiksmas != 'f' && pasirinkimas_veiksmas != 'F' && pasirinkimas_veiksmas != 't' && pasirinkimas_veiksmas != 'T'))
@@ -42,7 +52,7 @@ int main()
     else if (pasirinkimas_veiksmas == 'f' || pasirinkimas_veiksmas == 'F') {
         ivedimasIsFailo(studentaiV);
         spausdintiGalutiniusRezultatus(studentaiV);
-       
+
     }
 
     else if (pasirinkimas_veiksmas == 't' || pasirinkimas_veiksmas == 'T') {
@@ -119,4 +129,4 @@ int main()
 
 
     return 0;
-    }
+}
