@@ -1,28 +1,30 @@
-#ifndef STUDENTAS_H
-#define STUDENTAS_H
-
 #include <iostream>
 #include <iomanip>
 #include <string>
 #include <vector>
 #include <list>
 #include <algorithm>
+#include "zmogus.h"
 
 
 using std::string;
 using std::vector;
 using std::list;
 
-class StudentasV {
+class StudentasV : public Zmogus {
 private:
     std::string vardas;
     std::string pavarde;
     std::vector<int> namu_darbai;
     int egzamino_rezultatas;
     float galutinisBalas;
+
 public:
     // konstruktorius
     StudentasV() : egzamino_rezultatas(0), galutinisBalas(0.0) {}
+
+    void Rodymas() const override {
+    }
 
     //getteriai ir setteriai
     const std::string& getVardas() const {
@@ -71,12 +73,12 @@ public:
 
     // destruktorius
     ~StudentasV() {
-        std::cout << "iskviestas destruktorius " << vardas << " " << pavarde << std::endl;
+        //std::cout << "iskviestas destruktorius " << vardas << " " << pavarde << std::endl;
     }
 
     // kopijavimo konstruktorius
     StudentasV(const StudentasV& other) {
-        std::cout << "iskviestas kopijavimo konstruktorius " << other.vardas << " " << other.pavarde << std::endl;
+        //std::cout << "iskviestas kopijavimo konstruktorius " << other.vardas << " " << other.pavarde << std::endl;
         vardas = other.vardas;
         pavarde = other.pavarde;
         namu_darbai = other.namu_darbai;
@@ -86,9 +88,9 @@ public:
 
     // kopijavimo priskyrimo operatorius
     StudentasV& operator=(const StudentasV& other) {
-        std::cout << "iskviestas kopijavimo priskyrimo operatorius " << other.vardas << " " << other.pavarde << std::endl;
+       // std::cout << "iskviestas kopijavimo priskyrimo operatorius " << other.vardas << " " << other.pavarde << std::endl;
         if (this != &other) {
-            namu_darbai.clear(); 
+            namu_darbai.clear();
             vardas = other.vardas;
             pavarde = other.pavarde;
             namu_darbai = other.namu_darbai;
@@ -98,8 +100,8 @@ public:
         return *this;
     }
     // perdengtas ivesties operatorius
-        friend std::istream & operator>>(std::istream & input, StudentasV & studentas) {
-            std::cout << "iskviestas perdengtas ivesties operatorius " << studentas.vardas << " " << studentas.pavarde << std::endl;
+    friend std::istream& operator>>(std::istream& input, StudentasV& studentas) {
+        //std::cout << "iskviestas perdengtas ivesties operatorius " << studentas.vardas << " " << studentas.pavarde << std::endl;
         std::cout << "Enter vardas: ";
         input >> studentas.vardas;
 
@@ -112,7 +114,7 @@ public:
 
     // perdengtas isvesties operatorius
     friend std::ostream& operator<<(std::ostream& output, const StudentasV& studentas) {
-        std::cout << "iskviestas perdengtas isvesties operatorius " <<  std::endl;
+       // std::cout << "iskviestas perdengtas isvesties operatorius " << std::endl;
         output << "Vardas: " << studentas.vardas << "\n";
         output << "Pavarde: " << studentas.pavarde << "\n";
 
@@ -206,11 +208,11 @@ int generuotiAtsitiktiniBalai(int min, int max);
 bool lyginimasPagalVardus(const StudentasV& a, const StudentasV& b);
 double skaiciuotiGalutiniVidurki(const std::vector<int>& namu_darbai, int egzamino_rezultatas);
 double skaiciuotiGalutiniMediana(const std::vector<int>& namu_darbai, int egzamino_rezultatas);
- void skaitytiDuomenisIsFailo(const std::string& failoPavadinimas, std::vector<StudentasV>& studentaiV);
- void ivedimasRanka(std::vector<StudentasV>& studentaiV);
- void ivedimasAtsitiktinai(std::vector<StudentasV>& studentaiV);
- void ivedimasIsFailo(std::vector<StudentasV>& studentaiV);
- void spausdintiGalutiniusRezultatus(const std::vector<StudentasV>& studentaiV);
+void skaitytiDuomenisIsFailo(const std::string& failoPavadinimas, std::vector<StudentasV>& studentaiV);
+void ivedimasRanka(std::vector<StudentasV>& studentaiV);
+void ivedimasAtsitiktinai(std::vector<StudentasV>& studentaiV);
+void ivedimasIsFailo(std::vector<StudentasV>& studentaiV);
+void spausdintiGalutiniusRezultatus(const std::vector<StudentasV>& studentaiV);
 
 
 void rusiavimas_vector(vector<StudentasV>& studentaiV);
